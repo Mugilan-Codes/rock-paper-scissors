@@ -1,0 +1,10 @@
+$primary: red;
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  background: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
