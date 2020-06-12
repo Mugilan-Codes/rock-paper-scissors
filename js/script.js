@@ -1,4 +1,6 @@
-const { ROCK, SCISSORS, PAPER } = require('./constants');
+const ROCK = 'ROCK';
+const PAPER = 'PAPER';
+const SCISSORS = 'SCISSORS';
 
 const GAME_MOVES = [ROCK, PAPER, SCISSORS];
 
