@@ -1,4 +1,10 @@
-const playRound = (playerSelection, computerSelection = computerPlay()) => {
+import { computerPlay } from './computer';
+import { GAME_MOVES, ROCK, PAPER, SCISSORS } from '../utils/types';
+
+export const playRound = (
+  playerSelection,
+  computerSelection = computerPlay()
+) => {
   playerSelection = playerSelection.toUpperCase();
   switch (playerSelection) {
     case 'R':

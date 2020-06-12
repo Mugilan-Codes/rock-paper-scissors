@@ -1,8 +1,9 @@
-const GAME_MOVES = [ROCK, PAPER, SCISSORS];
+import { playRound } from './components/play-round';
+import { PLAYER, COMPUTER } from './utils/types';
 
 let round, playerScore, computerScore, realRounds, winner;
 
-const game = (maxRounds = 5) => {
+export const game = (maxRounds = 5) => {
   if (maxRounds < 0) maxRounds = 5;
   if (maxRounds % 2 === 0) maxRounds += 1;
 

@@ -1,1 +1,3 @@
-alert('Hello from index.js');
+import { game } from './app/app';
+
+game();
