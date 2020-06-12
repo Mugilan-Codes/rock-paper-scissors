@@ -3,7 +3,6 @@
 # TODO
 
 - Refactor Code
-- Multiple Rounds
 - Separate Code and Publish To Github Pages
 - Use Webpack to Bundle
 - Give UI

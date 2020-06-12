@@ -1,10 +1,12 @@
 const ROCK = 'ROCK';
 const PAPER = 'PAPER';
 const SCISSORS = 'SCISSORS';
+const PLAYER = 'PLAYER';
+const COMPUTER = 'COMPUTER';
 
 const GAME_MOVES = [ROCK, PAPER, SCISSORS];
 
-let round, playerScore, computerScore, realRounds;
+let round, playerScore, computerScore, realRounds, winner;
 
 console.clear();
 
@@ -60,6 +62,7 @@ const game = (maxRounds = 5) => {
   playerScore = 0;
   computerScore = 0;
   realRounds = 0;
+  winner = '';
   let winningScore = Math.floor(maxRounds / 2) + 1;
 
   console.log({ maxRounds, winningScore });
@@ -90,8 +93,14 @@ const game = (maxRounds = 5) => {
         round++;
         console.log({ round, playerScore, computerScore, realRounds });
         break;
+      default:
+        console.log('Choose one of the options');
     }
   }
 
-  console.log(`The Winner is and it took ${realRounds} to get a result`);
+  winner = playerScore === winningScore ? PLAYER : COMPUTER;
+
+  console.log(
+    `The Winner is ${winner} and it took ${realRounds} overall rounds to get a result`
+  );
 };
