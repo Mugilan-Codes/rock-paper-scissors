@@ -12,36 +12,64 @@ const computerPlay = () => {
   return GAME_MOVES[randomNumber];
 };
 
+const declareRoundWinner = (p1Move, p2Move) => {
+  if (p1Move === p2Move) {
+    return 0;
+  }
+
+  if (
+    (p1Move === SCISSORS && p2Move === PAPER) ||
+    (p1Move === PAPER && p2Move === ROCK) ||
+    (p1Move === ROCK && p2Move === SCISSORS)
+  ) {
+    return 1;
+  }
+
+  return 2;
+};
+
 const playRound = (playerSelection, computerSelection = computerPlay()) => {
   playerSelection = playerSelection.toUpperCase();
+
+  switch (playerSelection) {
+    case 'R':
+      playerSelection = ROCK;
+      break;
+    case 'P':
+      playerSelection = PAPER;
+      break;
+    case 'S':
+      playerSelection = SCISSORS;
+      break;
+    default:
+      playerSelection = playerSelection;
+  }
 
   if (!GAME_MOVES.includes(playerSelection)) {
     return `Invalid Move. You Entered ${playerSelection}`;
   }
 
-  if (playerSelection === computerSelection) {
-    return 'Same';
+  const roundWinner = declareRoundWinner(playerSelection, computerSelection);
+
+  let roundWinnerMessage;
+
+  switch (roundWinner) {
+    case 0:
+      roundWinnerMessage = `It's a Tie! You Both Chose ${playerSelection}`;
+      break;
+    case 1:
+      roundWinnerMessage = `You Win! ${playerSelection} beats ${computerSelection}`;
+      break;
+    case 2:
+      roundWinnerMessage = `You Lose! ${computerSelection} beats ${playerSelection}`;
+      break;
+    default:
+      roundWinnerMessage = 'Somethinng bad happened';
   }
 
-  if (
-    (playerSelection === SCISSORS && computerSelection === PAPER) ||
-    (playerSelection === PAPER && computerSelection === ROCK) ||
-    (playerSelection === ROCK && computerSelection === SCISSORS)
-  ) {
-    return `You win! ${playerSelection} beats ${computerSelection}`;
-  }
-
-  if (
-    (computerSelection === SCISSORS && playerSelection === PAPER) ||
-    (computerSelection === PAPER && playerSelection === ROCK) ||
-    (computerSelection === ROCK && playerSelection === SCISSORS)
-  ) {
-    return `You lose! ${computerSelection} beats ${playerSelection}`;
-  }
-
-  return { playerSelection, computerSelection };
+  return roundWinnerMessage;
 };
 
-let playerSelection = 'paPEr';
+let playerSelection = 'rock';
 
 console.log(playRound(playerSelection));
