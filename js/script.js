@@ -4,6 +4,8 @@ const SCISSORS = 'SCISSORS';
 
 const GAME_MOVES = [ROCK, PAPER, SCISSORS];
 
+let round, playerScore, computerScore, realRounds;
+
 console.clear();
 
 const computerPlay = () => {
@@ -54,11 +56,11 @@ const game = (maxRounds = 5) => {
   if (maxRounds % 2 === 0) maxRounds += 1;
 
   let playerSelection;
-  let round = 0;
-  let playerScore = 0;
-  let computerScore = 0;
+  round = 0;
+  playerScore = 0;
+  computerScore = 0;
+  realRounds = 0;
   let winningScore = Math.floor(maxRounds / 2) + 1;
-  let realRounds = 0;
 
   console.log({ maxRounds, winningScore });
 
