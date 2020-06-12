@@ -1,3 +1,7 @@
+const GAME_MOVES = [ROCK, PAPER, SCISSORS];
+
+let round, playerScore, computerScore, realRounds, winner;
+
 const game = (maxRounds = 5) => {
   if (maxRounds < 0) maxRounds = 5;
   if (maxRounds % 2 === 0) maxRounds += 1;

@@ -1,15 +1,3 @@
-const GAME_MOVES = [ROCK, PAPER, SCISSORS];
-
-let round, playerScore, computerScore, realRounds, winner;
-
-console.clear();
-
-const computerPlay = () => {
-  const randomNumber = Math.floor(Math.random() * GAME_MOVES.length);
-
-  return GAME_MOVES[randomNumber];
-};
-
 const playRound = (playerSelection, computerSelection = computerPlay()) => {
   playerSelection = playerSelection.toUpperCase();
   switch (playerSelection) {
