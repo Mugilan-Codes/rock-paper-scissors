@@ -70,6 +70,14 @@ const playRound = (playerSelection, computerSelection = computerPlay()) => {
   return roundWinnerMessage;
 };
 
-let playerSelection = 'rock';
+const game = (rounds = 5) => {
+  let playerSelection;
 
-console.log(playRound(playerSelection));
+  for (let i = 0; i < rounds; i++) {
+    playerSelection = prompt(
+      'Choose One of the Three \nRock - r\nPaper - p\nScissors - s'
+    );
+
+    console.log(playRound(playerSelection));
+  }
+};
