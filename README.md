@@ -5,7 +5,7 @@
 - Refactor Code
 - Separate Code and Publish To Github Pages
 - Use Webpack to Bundle
-- Give UI (move the console version to new branch)
+- Give UI
 
 ## Read This
 
