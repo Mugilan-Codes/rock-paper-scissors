@@ -20,6 +20,8 @@
   "homepage": "https://github.com/Mugilan-Codes/rock-paper-scissors#readme",
   "devDependencies": {
     "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
