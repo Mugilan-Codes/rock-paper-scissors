@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Mugilan-Codes/rock-paper-scissors#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
