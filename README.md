@@ -7,6 +7,7 @@
 - Minify Images
 - Complete The Game
 - Give UI
+- Convert to React
 
 ## Read This
 
