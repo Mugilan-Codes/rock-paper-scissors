@@ -1,4 +1,5 @@
 const path = require('path');
+const ImageminPlugin = require('imagemin-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -14,13 +15,30 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpg|gif|jpeg)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'images',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images',
+            },
           },
-        },
+          {
+            loader: ImageminPlugin.loader,
+            options: {
+              bail: false,
+              cache: false,
+              imageminOptions: {
+                plugins: [
+                  ['pngquant', { quality: [0.5, 0.5] }],
+                  ['mozjpeg', { quality: 50, progressive: true }],
+                  ['gifsicle', { interlaced: true, optimizationLevel: 3 }],
+                  ['svgo', { plugins: [{ removeViewBox: false }] }],
+                ],
+              },
+            },
+          },
+        ],
       },
     ],
   },
