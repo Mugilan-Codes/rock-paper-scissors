@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
-    "build:deploy": "npm run build && gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "build:deploy": "npm run build && npm run deploy"
   },
   "repository": {
     "type": "git",
