@@ -3,12 +3,10 @@
 # TODO
 
 - Refactor Code
-- Separate DIST folder and Publish To Github Pages (create a script for this)
 - Complete The Game
 - Give UI
 - Convert to React
 
-## Read This
+## Resource
 
-- [Deploying a subfolder to GitHub Pages](https://gist.github.com/cobyism/4730490)
-- [Deploying your JS App to Github Pages the easy way (or not)](https://medium.com/linagora-engineering/deploying-your-js-app-to-github-pages-the-easy-way-or-not-1ef8c48424b7)
+- [gh-pages for deploying](https://www.npmjs.com/package/gh-pages)
