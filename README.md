@@ -33,10 +33,10 @@
      ```
      npm run build
      ```
-   - Deploy Production build to gh-pages
-     ```
-     npm run deploy
-     ```
+     - Deploy Production build to gh-pages
+       ```
+       npm run deploy
+       ```
    - Build and Deploy to gh-pages
      ```
      npm run build:deploy
