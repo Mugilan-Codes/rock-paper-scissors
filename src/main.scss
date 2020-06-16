@@ -1,4 +1,4 @@
-$primary: blue;
+$primary: rgb(253, 253, 253);
 
 * {
   margin: 0;
@@ -33,4 +33,55 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .game-choices {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+
+      .choice {
+        padding: 1rem;
+        border: 5px solid black;
+        margin: 1rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+}
+
+.selection {
+  border: 5px solid green !important;
+  transition: 0.5 all ease;
 }
