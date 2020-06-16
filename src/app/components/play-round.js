@@ -1,5 +1,6 @@
 import { computerPlay } from '../utils/get-comp-choice';
 import { ROCK, PAPER, SCISSORS } from '../constants/types';
+import { getResult } from '../utils/get-result';
 
 export const playRound = (
   playerSelection,
@@ -20,4 +21,7 @@ export const playRound = (
       playerSelection = playerSelection;
   }
   console.log({ playerSelection, computerSelection });
+
+  const winner = getResult(playerSelection, computerSelection);
+  console.log({ winner });
 };
