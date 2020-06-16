@@ -1,4 +1,4 @@
-import { game } from './app/app';
+// import { game } from './app/app';
 import './main.scss';
 
-game(1);
+console.log('Index.js');
