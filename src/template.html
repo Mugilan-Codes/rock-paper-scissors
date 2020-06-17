@@ -13,6 +13,21 @@
       </header>
 
       <section>
+        <div class="info">
+          <label for="max-score">
+            Welcome, Play best of
+            <input
+              type="number"
+              name="max-score"
+              id="max-score"
+              value="5"
+              min="1"
+              step="1"
+          /></label>
+
+          <p class="win-score">Score <span>3</span> to win</p>
+        </div>
+
         <div class="score">
           <div class="player-score">
             <h2>Player</h2>
@@ -26,7 +41,22 @@
         </div>
 
         <div class="result">
-          <p>Select one of the options</p>
+          <p class="message">Select one of the options</p>
+
+          <p class="hide">
+            Took <span class="complete-rounds"></span> rounds for a result
+          </p>
+
+          <button class="hide">Restart Game</button>
+        </div>
+
+        <div class="display-options">
+          <div class="player-choice">
+            <img src="./assests/rock_1.png" alt="Rock" />
+          </div>
+          <div class="computer-choice">
+            <img src="./assests/rock_1.png" alt="Rock" />
+          </div>
         </div>
       </section>
 
