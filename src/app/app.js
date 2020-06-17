@@ -1,7 +1,10 @@
+import { playRound } from './components/play-round';
+
 const maxScore__label = document.querySelector('.max-score__input');
 const startGame__button = document.querySelector('.info button');
 const maxRoundsDisplay__p = document.querySelector('.info .rounds');
 const winScoreDisplay__p = document.querySelector('.info .win-score');
+const userGameOptions__div = document.querySelector('.choose-options');
 
 export const game = (maxRounds = 5) => {
   maxRounds % 2 === 0 && maxRounds++;
@@ -18,4 +21,14 @@ export const game = (maxRounds = 5) => {
 
   winScoreDisplay__p.classList.remove('hide');
   winScoreDisplay__p.querySelector('span').textContent = winScore;
+
+  userGameOptions__div.classList.remove('hide');
+
+  userGameOptions__div.querySelectorAll('.btn').forEach((option) => {
+    option.addEventListener('click', ({ target: { id } }) => {
+      const result = playRound(id);
+
+      console.log({ result });
+    });
+  });
 };
