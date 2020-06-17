@@ -1,8 +1,8 @@
 import { getComputerChoice } from '../utils/get-comp-choice';
 
-import r from '../../assests/rock_1.png';
-import p from '../../assests/paper_1.png';
-import s from '../../assests/scissors_1.png';
+import r from '../../assests/rock.png';
+import p from '../../assests/paper.png';
+import s from '../../assests/scissors.png';
 
 const playerChoice__img = document.querySelector(
   '.display-options .player-choice img'
