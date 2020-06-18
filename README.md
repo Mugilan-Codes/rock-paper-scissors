@@ -5,7 +5,6 @@
 - Refactor Code
 - Complete The Game
 - Give UI
-- Convert to React
 
 ## Resource
 

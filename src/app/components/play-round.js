@@ -16,8 +16,6 @@ export const playRound = (
   playerChoice,
   computerChoice = getComputerChoice()
 ) => {
-  console.log({ playerChoice, computerChoice });
-
   const pImg = playerChoice === 'r' ? r : playerChoice === 'p' ? p : s;
   playerChoice__img.src = pImg;
 
