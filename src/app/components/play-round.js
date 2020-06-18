@@ -10,6 +10,7 @@ const playerChoice__img = document.querySelector(
 const computerChoice__img = document.querySelector(
   '.display-options .computer-choice img'
 );
+const resultDisplayMessage__p = document.querySelector('.result .message');
 
 export const playRound = (
   playerChoice,
@@ -27,15 +28,15 @@ export const playRound = (
     case 'rs':
     case 'pr':
     case 'sp':
-      console.log('User');
+      resultDisplayMessage__p.textContent = `You Win!, ${playerChoice} beats ${computerChoice}`;
       return 'W';
     case 'sr':
     case 'rp':
     case 'ps':
-      console.log('Computer');
+      resultDisplayMessage__p.textContent = `You Lose!, ${playerChoice} lost to ${computerChoice}`;
       return 'L';
     default:
-      console.log('Draw');
+      resultDisplayMessage__p.textContent = `Draw!, You both picked ${playerChoice}`;
       return 'D';
   }
 };
