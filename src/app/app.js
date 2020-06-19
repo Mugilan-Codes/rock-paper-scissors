@@ -6,11 +6,6 @@ const startGame__button = document.querySelector('.info button');
 const maxRoundsDisplay__p = document.querySelector('.info .rounds');
 const winScoreDisplay__p = document.querySelector('.info .win-score');
 const userGameOptions__div = document.querySelector('.choose-options');
-const resultDisplayMessage__p = document.querySelector('.result .message');
-const completedRoundsDisplay__span = document.querySelector(
-  '.result .complete-rounds'
-);
-const restartGame__button = document.querySelector('.result button');
 
 export const game = (maxRounds = 5) => {
   maxRounds % 2 === 0 && maxRounds++;
@@ -30,43 +25,34 @@ export const game = (maxRounds = 5) => {
 
   let playerScore = 0,
     computerScore = 0,
-    rounds = 0;
+    rounds = 0,
+    gameOver = false;
+
+  const playGame = (e) => {
+    if (gameOver) {
+      return;
+    }
+
+    const result = playRound(e.target.id);
+
+    switch (result) {
+      case 'W':
+        rounds++;
+        playerScore++;
+        break;
+      case 'L':
+        rounds++;
+        computerScore++;
+        break;
+      case 'D':
+        rounds++;
+        break;
+    }
+
+    gameOver = updateScreen(playerScore, computerScore, rounds, winScore);
+  };
 
   userGameOptions__div.querySelectorAll('.btn').forEach((option) => {
-    option.addEventListener('click', ({ target: { id } }) => {
-      const result = playRound(id);
-
-      switch (result) {
-        case 'W':
-          rounds++;
-          playerScore++;
-          break;
-        case 'L':
-          rounds++;
-          computerScore++;
-          break;
-        case 'D':
-          rounds++;
-          break;
-      }
-
-      updateScreen(playerScore, computerScore, rounds);
-    });
+    option.addEventListener('click', playGame);
   });
-  if (computerScore === winScore) {
-    resultDisplayMessage__p.textContent = 'Computer Wins';
-
-    completedRoundsDisplay__span.parentElement.classList.remove('hide');
-    completedRoundsDisplay__span.textContent = rounds;
-
-    restartGame__button.classList.remove('hide');
-  }
-  if (playerScore === winScore) {
-    resultDisplayMessage__p.textContent = 'User Wins';
-
-    completedRoundsDisplay__span.parentElement.classList.remove('hide');
-    completedRoundsDisplay__span.textContent = rounds;
-
-    restartGame__button.classList.remove('hide');
-  }
 };
