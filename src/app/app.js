@@ -34,9 +34,6 @@ export const game = (maxRounds = 5) => {
 
   userGameOptions__div.querySelectorAll('.btn').forEach((option) => {
     option.addEventListener('click', ({ target: { id } }) => {
-      // if (computerScore === winScore || playerScore === winScore) {
-      //   return;
-      // }
       const result = playRound(id);
 
       switch (result) {
