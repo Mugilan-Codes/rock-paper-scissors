@@ -1,4 +1,4 @@
-const GAME_MOVES = ['r', 'p', 's'];
+import { GAME_MOVES } from './game-moves';
 
 export const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * GAME_MOVES.length);

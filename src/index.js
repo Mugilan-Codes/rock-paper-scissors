@@ -1,11 +1,16 @@
-import { game } from './app/app';
+import { startGame } from './app/app';
 import './main.scss';
 
-const maxRounds__input = document.querySelector('.info input');
-const startGame__button = document.querySelector('.info button');
+const startGame__section = document.getElementById('start-game');
+const startGameButton__div = startGame__section.querySelector('div');
+const gameLength__input = startGame__section.querySelector('input');
 
-startGame__button.addEventListener('click', () => {
-  const maxRounds = maxRounds__input.value;
+const game = () => {
+  const gameLength = gameLength__input.value;
 
-  maxRounds < 0 ? game() : game(maxRounds);
-});
+  startGame__section.classList.add('hide');
+
+  startGame(gameLength);
+};
+
+startGameButton__div.addEventListener('click', game);

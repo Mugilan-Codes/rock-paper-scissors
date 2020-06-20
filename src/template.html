@@ -6,112 +6,81 @@
     <title>RPS Game</title>
   </head>
   <body>
-    <main class="game">
-      <header>
-        <h1>Rock Paper Scissors</h1>
-        <p>Let's Play</p>
-      </header>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+      <p>Let's Play the Game</p>
+    </header>
 
-      <section>
-        <div class="info">
-          <div class="game-control">
-            <label class="max-score__input" for="max-score">
-              Welcome, Play best of
-              <input
-                type="number"
-                name="max-score"
-                id="max-score"
-                value="5"
-                min="1"
-                step="1"
-            /></label>
+    <main>
+      <section id="start-game">
+        <label for="best-of"
+          >Play best of
+          <input
+            type="number"
+            name="best-of"
+            id="best-of"
+            step="1"
+            min="1"
+            max="99"
+            value="5"
+          />
+          Rounds</label
+        >
 
-            <button class="btn">Start Game</button>
-          </div>
+        <div class="btn btn-primary">Start Game</div>
+      </section>
 
-          <p class="hide rounds">You are playing best of <span></span></p>
-
-          <p class="hide win-score">Score <span></span> to win</p>
+      <section class="hide" id="play-game">
+        <div class="playing">
+          <h2>You are playing best of <span class="show-game-limit"></span></h2>
+          <p>Get <span class="show-winning-score"></span> points to win</p>
         </div>
 
-        <div class="score">
+        <div class="score-board">
           <div class="player-score">
-            <h2>Player</h2>
+            <h3>Player</h3>
             <p>0</p>
           </div>
 
           <div class="computer-score">
-            <h2>Computer</h2>
+            <h3>Computer</h3>
             <p>0</p>
           </div>
         </div>
 
-        <div class="result">
-          <p class="message">Select one of the options</p>
-
-          <p class="hide">
-            Took <span class="complete-rounds"></span> rounds for a result
-          </p>
-
-          <button class="btn hide">Restart Game</button>
+        <div class="play-round">
+          <p>Select one of the Options</p>
         </div>
 
-        <div class="display-options">
+        <div class="chosen-option">
           <div class="player-choice">
-            <img src="./assests/rock.png" />
+            <img src="assests/rock.png" />
           </div>
-
           <div class="computer-choice">
-            <img src="./assests/rock.png" />
+            <img src="assests/rock.png" />
           </div>
         </div>
 
-        <div class="hide choose-options">
-          <button class="btn" id="r">Rock</button>
-          <button class="btn" id="p">Paper</button>
-          <button class="btn" id="s">Scissors</button>
-        </div>
-
-        <div class="completed-rounds">
+        <div class="round-number">
           <p>Round: <span>0</span></p>
         </div>
-      </section>
 
-      <footer>
-        <div class="social-links">
-          <a
-            href="https://twitter.com/MugilanCodes"
-            class="link"
-            target="_blank"
-            >Twitter</a
-          >
-          <a
-            href="https://www.facebook.com/mugilancodes"
-            class="link"
-            target="_blank"
-            >Facebook</a
-          >
-          <a
-            href="https://www.instagram.com/mugilancodes/"
-            class="link"
-            target="_blank"
-            >Instagram</a
-          >
-          <a
-            href="https://www.linkedin.com/in/mugilan-codes/"
-            class="link"
-            target="_blank"
-            >Linked-In</a
-          >
-          <a
-            href="https://github.com/Mugilan-Codes"
-            class="link"
-            target="_blank"
-            >Github</a
-          >
+        <div class="choices">
+          <div class="btn" id="r">Rock</div>
+          <div class="btn" id="p">Paper</div>
+          <div class="btn" id="s">Scissors</div>
         </div>
-        <p>Coded by Mugilan</p>
-      </footer>
+
+        <div class="hide final-result">
+          <h3>YOU <span>WIN</span></h3>
+          <p>It took <span>3</span> rounds to get a result</p>
+          <div class="btn">Restart Game</div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <p>Coded by Mugilan</p>
+    </footer>
   </body>
 </html>
