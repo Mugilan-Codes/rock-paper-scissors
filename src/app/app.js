@@ -34,19 +34,6 @@ const finalResult__div = document.querySelector('#play-game .final-result');
 const finalResult__span = finalResult__div.querySelector('h3 span');
 const finalRoundsDisplay__span = finalResult__div.querySelector('p span');
 
-const gameOverScreen = (result, roundsToComplete) => {
-  playerChoicesParent__div.classList.add('hide');
-  playingMode__div.classList.add('hide');
-  playRoundMessage__div.classList.add('hide');
-  chosenOptions__div.classList.add('hide');
-  displayCompletedRounds__div.classList.add('hide');
-
-  finalResult__div.classList.remove('hide');
-
-  finalResult__span.textContent = result;
-  finalRoundsDisplay__span.textContent = roundsToComplete;
-};
-
 let winScore;
 
 export const startGame = (gameLength = 5) => {
@@ -60,11 +47,10 @@ export const startGame = (gameLength = 5) => {
   showWinnigScore__span.textContent = winScore;
 };
 
-let roundResult,
-  playerScore = 0,
+let playerScore = 0,
   computerScore = 0,
   rounds = 0,
-  gameWinner,
+  gameResult,
   gameOver = false;
 
 playerChoices__div.forEach((choice) => {
@@ -75,12 +61,9 @@ playerChoices__div.forEach((choice) => {
 
     if (check === 'W') {
       playerScore++;
-      roundResult = 'You Win!';
-    } else if (check === 'L') {
+    }
+    if (check === 'L') {
       computerScore++;
-      roundResult = 'You Lose!';
-    } else {
-      roundResult = 'Draw';
     }
 
     rounds++;
@@ -89,16 +72,14 @@ playerChoices__div.forEach((choice) => {
     computerScore__p.textContent = computerScore;
 
     if (playerScore === winScore) {
-      gameWinner = 'WIN';
+      gameResult = 'WIN';
       gameOver = true;
     }
     if (computerScore === winScore) {
-      gameWinner = 'LOSE';
+      gameResult = 'LOSE';
       gameOver = true;
     }
 
-    updateScreen(roundResult);
-
-    if (gameOver) gameOverScreen(gameWinner, rounds);
+    if (gameOver) updateScreen(gameResult, rounds);
   });
 });
