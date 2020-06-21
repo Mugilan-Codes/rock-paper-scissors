@@ -3,8 +3,8 @@
 # TODO
 
 - Refactor Code
-- Complete The Game
-- Give UI
+- Change Colors
+- Add CSS Animations
 
 ## Resource
 
