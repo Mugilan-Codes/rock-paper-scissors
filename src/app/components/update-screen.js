@@ -8,8 +8,10 @@ const displayCompletedRounds__div = playGame__section.querySelector(
   '.round-number'
 );
 const finalResult__div = playGame__section.querySelector('.final-result');
+const scoreBoard__div = playGame__section.querySelector('.score-board');
 const finalResult__span = finalResult__div.querySelector('h3 span');
 const finalRoundsDisplay__span = finalResult__div.querySelector('p span');
+const restartGameButton__div = finalResult__div.querySelector('div');
 
 export const updateScreen = (result, roundsToComplete) => {
   playerChoicesParent__div.classList.add('hide');
@@ -19,7 +21,12 @@ export const updateScreen = (result, roundsToComplete) => {
   displayCompletedRounds__div.classList.add('hide');
 
   finalResult__div.classList.remove('hide');
+  scoreBoard__div.classList.add('final-scorecard');
 
   finalResult__span.textContent = result;
   finalRoundsDisplay__span.textContent = roundsToComplete;
+
+  restartGameButton__div.addEventListener('click', () => {
+    window.location.reload(true);
+  });
 };

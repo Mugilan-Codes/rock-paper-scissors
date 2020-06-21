@@ -25,15 +25,6 @@ const displayCompletedRounds__span = displayCompletedRounds__div.querySelector(
   'p span'
 );
 
-const playRoundMessage__div = document.querySelector('#play-game .play-round');
-const displayRoundResult__p = playRoundMessage__div.querySelector('p');
-
-const chosenOptions__div = document.querySelector('#play-game .chosen-option');
-
-const finalResult__div = document.querySelector('#play-game .final-result');
-const finalResult__span = finalResult__div.querySelector('h3 span');
-const finalRoundsDisplay__span = finalResult__div.querySelector('p span');
-
 let winScore;
 
 export const startGame = (gameLength = 5) => {
